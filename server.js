@@ -4,6 +4,7 @@ if(process.env.NODE_ENV !== 'production'){
 const express = require('express')
 const app = express()
 const expressLayouts = require('express-ejs-layouts')
+const bodyParser = require('body-parser')
 const DEFAULT_PORT = 3000
 
 const mongoose = require('mongoose')
@@ -13,13 +14,17 @@ db.on('error', error => console.error(error))
 db.once('open', () => console.log('Successful Connection to Mongoose'))
 
 const indexRouter = require('./routes/index')
+const beerRouter = require('./routes/beers')
 
 app.set('view engine', 'ejs')
 app.set('views', __dirname + '/views')
 app.set('layout', 'layouts/layout')
 app.use(expressLayouts)
 app.use(express.static('public'))
+app.use(bodyParser.urlencoded({ limit: '10mb', extended: false}))
+
 
 app.use('/', indexRouter)
+app.use('/beers', beerRouter)
 
 app.listen(process.env.PORT || DEFAULT_PORT)
