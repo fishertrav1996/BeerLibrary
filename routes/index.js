@@ -5,7 +5,7 @@ const Beer = require('../models/beer')
 router.get('/', async (req, res) => {
     let beers
     try {
-        beers = await Beer.find().sort({createdAt: 'desc'}).limit(5).exec()
+        beers = await Beer.find().sort({createdAt: 'desc'}).limit(10).exec()
     } catch (error) {
         books = []
         console.error(error)
