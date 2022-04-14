@@ -7,7 +7,13 @@
 <br>
 <div>
     <% beers.forEach(beer => {  %> 
-            <img height="150" width="100" src="<%= beer.imagePath %> ">
+        <div>
             <%= beer.name %>
+            <a href="/beers/<%= beer.id %>">View</a>
+            <a href="/beers/<%= beer.id %>/edit">Edit</a>
+            <form method="post" action="/beers/<%= beer.id %>?_method=DELETE">
+                <button type="submit">Delete</button>
+            </form>
+        </div>
     <% }) %>
 </div>

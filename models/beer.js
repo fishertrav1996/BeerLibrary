@@ -9,23 +9,18 @@ const beerSchema = new mongoose.Schema({
     },
     category: {
         type: String,
-        required: true
     },
     price: {
         type: Number,
-        required: true
     },
     rating: {
-        type: Number,
-        required: false
+        type: Number
     },
     brand: {
-        type: String,
-        required: false
+        type: String
     },
     country: {
-        type: String,
-        required: false
+        type: String
     },
     createdAt: {
         type: Date,
@@ -34,7 +29,6 @@ const beerSchema = new mongoose.Schema({
     },
     image: {
         type: String,
-        required: true
     },
     description: {
         type: String

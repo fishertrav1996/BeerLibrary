@@ -1,0 +1,6 @@
+<h2>Edit Beer</h2>
+<form action="/beers/<%= beer.id %>?_method=PUT" method="post">
+    <%- include('_form_fields.ejs') %>
+    <a href="/beers/<%= beer.id %>">Cancel</a>
+    <button type="submit">Update</button>
+</form>
