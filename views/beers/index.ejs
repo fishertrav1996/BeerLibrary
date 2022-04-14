@@ -1,4 +1,4 @@
-<h2>Search Beers</h2>
+<h2 class="page-header">Search Beers</h2>
 <form action="/beers" method="get">
     <label>Name</label>
     <input type="text" name="name" value="<%= filters.name %> ">
@@ -9,11 +9,13 @@
     <% beers.forEach(beer => {  %> 
         <div>
             <%= beer.name %>
-            <a href="/beers/<%= beer.id %>">View</a>
-            <a href="/beers/<%= beer.id %>/edit">Edit</a>
-            <form method="post" action="/beers/<%= beer.id %>?_method=DELETE">
-                <button type="submit">Delete</button>
-            </form>
+            <div class="btn-row">
+                <a class="btn btn-primary" href="/beers/<%= beer.id %>">View</a>
+                <a class="btn btn-primary" href="/beers/<%= beer.id %>/edit">Edit</a>
+                <form method="post" action="/beers/<%= beer.id %>?_method=DELETE">
+                    <button class="btn btn-scary" type="submit">Delete</button>
+                </form>
+            </div>
         </div>
     <% }) %>
 </div>
