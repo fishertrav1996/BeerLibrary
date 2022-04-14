@@ -1,8 +1,8 @@
 <h2 class="page-header">Recently Added Beers!</h2>
-<div>
+<div class="beer-grid">
     <% beers.forEach(beer => {  %> 
             <a href="/beers/<%= beer.id %>">
-                <img height="150" width="100" src="<%= beer.imagePath %> ">
+                <img class="beer-image" height="150" width="100" src="<%= beer.imagePath %> ">
             </a>
     <% }) %>
 </div>

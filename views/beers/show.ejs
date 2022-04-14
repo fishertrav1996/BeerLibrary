@@ -1,15 +1,28 @@
 <h2 class="page-header"><%= beer.name %></h2>
-<img height="150" width="125" src="<%= beer.imagePath %> ">
-<h4>Category: <%= beer.category %></h4>
-<h4>Price: <%= beer.price %></h4>
-<h4>Rating: <%= beer.rating %></h4>
-<h4>Brand: <%= beer.brand %></h4>
-<h4>Country: <%= beer.country %></h4>
-<h4>Created At: <%= beer.createdAt %></h4>
-<h4>Description: <%= beer.description %></h4>
-<div class="btn-row">
-    <a class="btn btn-primary" href="/beers/<%= beer.id %>/edit">Edit</a>
-    <form method="post" action="/beers/<%= beer.id %>?_method=DELETE">
-        <button class="btn btn-scary" type="submit">Delete</button>
-    </form>
+<div class="beer-details">
+    <div>
+        <img class="beer-image" src="<%= beer.imagePath %> ">
+        <div class="btn-row">
+            <a class="btn btn-primary" href="/beers/<%= beer.id %>/edit">Edit</a>
+            <form method="post" action="/beers/<%= beer.id %>?_method=DELETE">
+                <button class="btn btn-scary" type="submit">Delete</button>
+            </form>
+        </div>
+    </div>
+    <div class="beer-details-grid">
+        <div class="beer-details-label">Category: </div>
+        <div><%= beer.category %></div>
+        <div class="beer-details-label">Price: </div>
+        <div><%= beer.price %></div>
+        <div class="beer-details-label">Rating: </div>
+        <div><%= beer.rating %></div>
+        <div class="beer-details-label">Brand: </div>
+        <div><%= beer.brand %></div>
+        <div class="beer-details-label">Country: </div>
+        <div><%= beer.country %></div>
+        <div class="beer-details-label">Created At: </div>
+        <div><%= beer.createdAt %></div>
+        <div class="beer-details-label">Description: </div>
+        <div><%= beer.description %></div>
+    </div> 
 </div>

@@ -40,8 +40,14 @@ router.get('/new', async (req, res) => {
 // Create Beer
 router.post('/', upload.single('image'), async (req, res) => {
     const fileName = req.file != null ? req.file.filename : null
+    let name
+    if(req.body.name == null || req.body.name == ''){
+        name = null
+    }else{
+        name = req.body.name
+    }
     const beer = new Beer({
-        name: req.body.name,
+        name: name,
         category: req.body.category,
         price: req.body.price,
         rating: req.body.rating,

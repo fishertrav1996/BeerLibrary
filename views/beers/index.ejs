@@ -13,8 +13,8 @@
 <br>
 <div>
     <% beers.forEach(beer => {  %> 
-        <div>
-            <h3><%= beer.name %></h3>
+        <div class="beer-row">
+            <h3 class="beer-name"><%= beer.name %></h3>
             <div class="btn-row">
                 <a class="btn btn-primary" href="/beers/<%= beer.id %>">View</a>
                 <a class="btn btn-primary" href="/beers/<%= beer.id %>/edit">Edit</a>
