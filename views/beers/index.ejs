@@ -1,14 +1,20 @@
 <h2 class="page-header">Search Beers</h2>
 <form action="/beers" method="get">
-    <label>Name</label>
-    <input type="text" name="name" value="<%= filters.name %> ">
-    <button type="submit">Search</button>
+    <div class="form-row">
+        <div class="form-item">
+            <label>Name</label>
+            <input type="text" name="name" value="<%= filters.name %> ">
+        </div>
+    </div>
+    <div class="form-row form-row-end">
+        <button class="btn btn-primary" type="submit">Search</button>
+    </div>
 </form>
 <br>
 <div>
     <% beers.forEach(beer => {  %> 
         <div>
-            <%= beer.name %>
+            <h3><%= beer.name %></h3>
             <div class="btn-row">
                 <a class="btn btn-primary" href="/beers/<%= beer.id %>">View</a>
                 <a class="btn btn-primary" href="/beers/<%= beer.id %>/edit">Edit</a>

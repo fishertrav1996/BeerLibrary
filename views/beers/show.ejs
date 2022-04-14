@@ -7,7 +7,9 @@
 <h4>Country: <%= beer.country %></h4>
 <h4>Created At: <%= beer.createdAt %></h4>
 <h4>Description: <%= beer.description %></h4>
-<a href="/beers/<%= beer.id %>/edit">Edit</a>
-<form method="post" action="/beers/<%= beer.id %>?_method=DELETE">
-    <button type="submit">Delete</button>
-</form>
+<div class="btn-row">
+    <a class="btn btn-primary" href="/beers/<%= beer.id %>/edit">Edit</a>
+    <form method="post" action="/beers/<%= beer.id %>?_method=DELETE">
+        <button class="btn btn-scary" type="submit">Delete</button>
+    </form>
+</div>
