@@ -1,5 +1,5 @@
 <h2>New Beer</h2>
-<form action="/beers" method="post">
+<form action="/beers" method="post" enctype="multipart/form-data">
     <%- include('_form_fields.ejs') %>
     <a href="/beers">Cancel</a>
     <button type="submit">Create</button>

@@ -1,1 +1,7 @@
-Middle
+<h2>Recently Added Beers!</h2>
+<div>
+    <% beers.forEach(beer => {  %> 
+            <img height="150" width="100" src="<%= beer.imagePath %> ">
+            <%= beer.name %>
+    <% }) %>
+</div>

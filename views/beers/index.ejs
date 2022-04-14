@@ -5,6 +5,9 @@
     <button type="submit">Search</button>
 </form>
 <br>
-<% beers.forEach(beer => {  %> 
-    <div><%= beer.name %> </div>
-<% }) %>
+<div>
+    <% beers.forEach(beer => {  %> 
+            <img height="150" width="100" src="<%= beer.imagePath %> ">
+            <%= beer.name %>
+    <% }) %>
+</div>

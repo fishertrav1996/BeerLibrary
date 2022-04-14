@@ -1,4 +1,6 @@
 const mongoose = require('mongoose')
+const path = require('path')
+const beerImageBasePath = 'uploads/beerImages'
 
 const beerSchema = new mongoose.Schema({
     name: {
@@ -11,7 +13,7 @@ const beerSchema = new mongoose.Schema({
     },
     price: {
         type: Number,
-        required: false
+        required: true
     },
     rating: {
         type: Number,
@@ -24,7 +26,26 @@ const beerSchema = new mongoose.Schema({
     country: {
         type: String,
         required: false
+    },
+    createdAt: {
+        type: Date,
+        required: true,
+        default: Date.now
+    },
+    image: {
+        type: String,
+        required: true
+    },
+    description: {
+        type: String
+    }
+})
+
+beerSchema.virtual('imagePath').get(function() {
+    if(this.image != null){
+        return path.join('/', beerImageBasePath, this.image)
     }
 })
 
 module.exports = mongoose.model('Beer', beerSchema)
+module.exports.beerImageBasePath = beerImageBasePath

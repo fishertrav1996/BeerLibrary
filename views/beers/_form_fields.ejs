@@ -1,4 +1,39 @@
-<label>Name</label>
-<input type="text" name="name" value="<%= beer.name %> ">
-<label>Category</label>
-<input type="text" name="category" value="<%= beer.category %> ">
+<div>
+    <label>Name</label>
+    <input type="text" name="name" value="<%= beer.name %> ">
+</div>
+<div>
+    <label>Category</label>
+    <input type="text" name="category" value="<%= beer.category %> ">
+</div>
+<div>
+    <label>Price</label>
+    <input type="number" name="price" min="0" value="<%= beer.price %> ">
+</div>
+<div>
+    <label>Rating</label>
+    <select name="rating">
+        <option selected label="0" value="0"></option>
+        <option selected label="1" value="1"></option>
+        <option selected label="2" value="2"></option>
+        <option selected label="3" value="3"></option>
+        <option selected label="4" value="4"></option>
+        <option selected label="5" value="5"></option>
+    </select>
+</div>
+<div>
+    <label>Brand</label>
+    <input type="text" name="brand" value="<%= beer.brand %> ">
+</div>
+<div>
+    <label>Country</label>
+    <input type="text" name="Country" value="<%= beer.country %> ">
+</div>
+<div>
+    <label>Image</label>
+    <input type="file" name="image">
+</div>
+<div>
+    <label>Description</label>
+    <textarea name="description"><%= beer.description %> </textarea>
+</div>
